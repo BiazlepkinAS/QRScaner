@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		0906001927DC8E41006C6BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906001827DC8E41006C6BA5 /* AppDelegate.swift */; };
 		0906001B27DC8E41006C6BA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906001A27DC8E41006C6BA5 /* SceneDelegate.swift */; };
-		0906001D27DC8E41006C6BA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906001C27DC8E41006C6BA5 /* ViewController.swift */; };
+		0906001D27DC8E41006C6BA5 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906001C27DC8E41006C6BA5 /* QRCodeViewController.swift */; };
 		0906002027DC8E41006C6BA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0906001E27DC8E41006C6BA5 /* Main.storyboard */; };
 		0906002227DC8E43006C6BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0906002127DC8E43006C6BA5 /* Assets.xcassets */; };
 		0906002527DC8E43006C6BA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0906002327DC8E43006C6BA5 /* LaunchScreen.storyboard */; };
 		0906003027DC8E43006C6BA5 /* QRScanerNativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906002F27DC8E43006C6BA5 /* QRScanerNativeTests.swift */; };
 		0906003A27DC8E44006C6BA5 /* QRScanerNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906003927DC8E44006C6BA5 /* QRScanerNativeUITests.swift */; };
 		0906003C27DC8E44006C6BA5 /* QRScanerNativeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906003B27DC8E44006C6BA5 /* QRScanerNativeUITestsLaunchTests.swift */; };
+		0906004927DC8EB7006C6BA5 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0906004827DC8EB7006C6BA5 /* QRScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		0906001527DC8E41006C6BA5 /* QRScanerNative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRScanerNative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0906001827DC8E41006C6BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0906001A27DC8E41006C6BA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0906001C27DC8E41006C6BA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0906001C27DC8E41006C6BA5 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		0906001F27DC8E41006C6BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0906002127DC8E43006C6BA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0906002427DC8E43006C6BA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		0906003527DC8E44006C6BA5 /* QRScanerNativeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRScanerNativeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0906003927DC8E44006C6BA5 /* QRScanerNativeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanerNativeUITests.swift; sourceTree = "<group>"; };
 		0906003B27DC8E44006C6BA5 /* QRScanerNativeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanerNativeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0906004827DC8EB7006C6BA5 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,10 @@
 		0906001727DC8E41006C6BA5 /* QRScanerNative */ = {
 			isa = PBXGroup;
 			children = (
-				0906001827DC8E41006C6BA5 /* AppDelegate.swift */,
-				0906001A27DC8E41006C6BA5 /* SceneDelegate.swift */,
-				0906001C27DC8E41006C6BA5 /* ViewController.swift */,
+				0906001C27DC8E41006C6BA5 /* QRCodeViewController.swift */,
+				0906004827DC8EB7006C6BA5 /* QRScannerViewController.swift */,
 				0906001E27DC8E41006C6BA5 /* Main.storyboard */,
-				0906002127DC8E43006C6BA5 /* Assets.xcassets */,
-				0906002327DC8E43006C6BA5 /* LaunchScreen.storyboard */,
-				0906002627DC8E43006C6BA5 /* Info.plist */,
+				0906004A27DC8EC9006C6BA5 /* Resources */,
 			);
 			path = QRScanerNative;
 			sourceTree = "<group>";
@@ -125,6 +124,18 @@
 				0906003B27DC8E44006C6BA5 /* QRScanerNativeUITestsLaunchTests.swift */,
 			);
 			path = QRScanerNativeUITests;
+			sourceTree = "<group>";
+		};
+		0906004A27DC8EC9006C6BA5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0906001827DC8E41006C6BA5 /* AppDelegate.swift */,
+				0906001A27DC8E41006C6BA5 /* SceneDelegate.swift */,
+				0906002127DC8E43006C6BA5 /* Assets.xcassets */,
+				0906002327DC8E43006C6BA5 /* LaunchScreen.storyboard */,
+				0906002627DC8E43006C6BA5 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0906001D27DC8E41006C6BA5 /* ViewController.swift in Sources */,
+				0906004927DC8EB7006C6BA5 /* QRScannerViewController.swift in Sources */,
+				0906001D27DC8E41006C6BA5 /* QRCodeViewController.swift in Sources */,
 				0906001927DC8E41006C6BA5 /* AppDelegate.swift in Sources */,
 				0906001B27DC8E41006C6BA5 /* SceneDelegate.swift in Sources */,
 			);
