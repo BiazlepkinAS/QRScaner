@@ -12,10 +12,11 @@ class QRCodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
     }
     
     private func configUI() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemPurple
 
     }
     

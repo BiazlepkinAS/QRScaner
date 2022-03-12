@@ -25,17 +25,20 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                                     AVMetadataObject.ObjectType.itf14,
                                     AVMetadataObject.ObjectType.dataMatrix,
                                     AVMetadataObject.ObjectType.interleaved2of5,
-                                    AVMetadataObject.ObjectType.qr]
+                                    AVMetadataObject.ObjectType.qr
+    ]
     
-    
-    @IBOutlet weak var topBar: UINavigationBar!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var topBar: UIView!
+    @IBOutlet weak var baclURLAdressView: UIView!
     @IBOutlet weak var uRLAdressLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Scanning()
+        Scanning()
         
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
@@ -67,9 +70,14 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if let qrCodeFrame = qrCodeFrame {
             qrCodeFrame.layer.borderColor = UIColor.green.cgColor
             qrCodeFrame.layer.borderWidth = 2
+            baclURLAdressView.backgroundColor = .clear
+            view.bringSubviewToFront(baclURLAdressView)
+//            view.bringSubviewToFront(moreButton)
             view.addSubview(qrCodeFrame)
             view.bringSubviewToFront(qrCodeFrame)
+            
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,6 +89,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         if metadataObjects.count == 0 {
             qrCodeFrame?.frame = .zero
             uRLAdressLabel.text = ""
+            titleLabel.isHidden = true
+            moreButton.isHidden = false
             return
         }
         
@@ -93,19 +103,31 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             
             if metaDataObj.stringValue != nil {
                 uRLAdressLabel.text = metaDataObj.stringValue
+                uRLChangePosition()
+
             }
         }
     }
     
-    
-    
-    
-    private func Scanning() {
-        topBar.backgroundColor = .clear
-        uRLAdressLabel.textColor = .white
+    private func uRLChangePosition() {
+        baclURLAdressView.translatesAutoresizingMaskIntoConstraints = false
+        uRLAdressLabel.topAnchor.constraint(equalTo: qrCodeFrame!.bottomAnchor, constant: 10).isActive = true
+        uRLAdressLabel.backgroundColor = .yellow
         
+       
     }
     
     
+
+    private func Scanning() {
+        moreButton.isHidden = false
+        moreButton.layer.cornerRadius = 15
+        moreButton.backgroundColor = .yellow
+        
+        uRLAdressLabel.textColor = .black
+        uRLAdressLabel.backgroundColor = .clear
+        topBar.backgroundColor = .clear
+        
+    }
     
 }
