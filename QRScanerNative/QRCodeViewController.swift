@@ -15,8 +15,8 @@ class QRCodeViewController: UIViewController {
         label.textColor = .secondaryLabel
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        label.shadowColor = .systemGray3
-        label.backgroundColor = .yellow
+        label.shadowColor = .systemGray6
+        label.backgroundColor = .systemBackground
         return label
     }()
 
@@ -26,12 +26,13 @@ configUI()
     }
     
     private func configUI() {
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .systemBackground
         
         view.addSubview(titleLabel)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 20).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         
