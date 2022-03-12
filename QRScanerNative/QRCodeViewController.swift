@@ -8,16 +8,18 @@
 import UIKit
 
 class QRCodeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        configUI()
+    }
+    
+    private func configUI() {
+        view.backgroundColor = .systemPurple
     }
     
     @IBAction func returnToHomeScreen(segue: UIStoryboardSegue) {
         dismiss(animated: true, completion: nil)
     }
-
-
 }
 
