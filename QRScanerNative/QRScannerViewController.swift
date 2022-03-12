@@ -9,10 +9,9 @@ import UIKit
 
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
-    var captureSession = AVCaptureSession()
-    var videoPreviewLayer = AVCaptureVideoPreviewLayer()
-    var qrCodeFrame: UIView?
-    
+    private var captureSession = AVCaptureSession()
+    private var videoPreviewLayer = AVCaptureVideoPreviewLayer()
+    private var qrCodeFrame: UIView?
     private let supportCodeTypes = [AVMetadataObject.ObjectType.upce,
                                     AVMetadataObject.ObjectType.code39,
                                     AVMetadataObject.ObjectType.code39Mod43,
@@ -42,6 +41,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         Scanning()
         showMenu()
+        gestureLeft()
         
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
@@ -76,12 +76,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             qrCodeFrame.layer.borderWidth = 2
             baclURLAdressView.backgroundColor = .clear
             view.bringSubviewToFront(baclURLAdressView)
-//            view.bringSubviewToFront(moreButton)
             view.addSubview(qrCodeFrame)
             view.bringSubviewToFront(qrCodeFrame)
-            
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,14 +98,11 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         let metaDataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
         if metaDataObj.type == AVMetadataObject.ObjectType.qr {
-            
             let barCodeObj = videoPreviewLayer.transformedMetadataObject(for: metaDataObj)
             qrCodeFrame?.frame = barCodeObj!.bounds
-            
             if metaDataObj.stringValue != nil {
                 uRLAdressLabel.text = metaDataObj.stringValue
                 uRLChangePosition()
-
             }
         }
     }
@@ -117,47 +111,51 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         baclURLAdressView.translatesAutoresizingMaskIntoConstraints = false
         uRLAdressLabel.topAnchor.constraint(equalTo: qrCodeFrame!.bottomAnchor, constant: 10).isActive = true
         uRLAdressLabel.backgroundColor = .yellow
-        
-       
+        moreButton.isHidden = false
     }
     
-    
-
     private func Scanning() {
-        moreButton.isHidden = false
+        moreButton.isHidden = true
         moreButton.layer.cornerRadius = 15
         moreButton.backgroundColor = .yellow
         
         uRLAdressLabel.textColor = .black
         uRLAdressLabel.backgroundColor = .clear
         topBar.backgroundColor = .clear
-        
     }
     
     private func showMenu() {
         let shared = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { (action) in
-
-                 print("shared action was tapped")
-            }
-
-            let copyLink = UIAction(title: "copy Links", image: UIImage(systemName: "doc.on.doc.fill")) { (action) in
-
-                print("Add User action was tapped")
-            }
-
-            let addToReadList = UIAction(title: "add to readList", image: UIImage(systemName: "eyeglasses")) { (action) in
-                 print("Remove User action was tapped")
-            }
+            print("shared action was tapped")
+        }
+        
+        let copyLink = UIAction(title: "copy Links", image: UIImage(systemName: "doc.on.doc.fill")) { (action) in
+            print("Add User action was tapped")
+        }
+        
+        let addToReadList = UIAction(title: "add to readList", image: UIImage(systemName: "eyeglasses")) { (action) in
+            print("Remove User action was tapped")
+        }
+        
         let openToApp = UIAction(title: "open in App", image: UIImage(systemName:"safari")) { (action) in
             print("Add to App action tapped")
         }
         
+        let menu = UIMenu(title: "Menu", options: .displayInline, children: [shared , copyLink, addToReadList, openToApp])
 
-            let menu = UIMenu(title: "Menu", options: .displayInline, children: [shared , copyLink, addToReadList, openToApp])
-        
         moreButton.menu = menu
         moreButton.showsMenuAsPrimaryAction = true
-        
     }
-    
+    private func gestureLeft() {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
+        leftSwipe.direction = .left
+        self.view.addGestureRecognizer(leftSwipe)
+    }
+    @objc func swipeFunc(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            performSegue(withIdentifier: "Left", sender: self)
+        } else {
+            print("hello")
+        }
+    }
 }

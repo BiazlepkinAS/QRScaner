@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="QRCodeViewController" id="BYZ-38-t0r" customClass="QRCodeViewController" customModule="QRScanerNative" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAC-Qx-Ppb">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <rect key="frame" x="132" y="346" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="SdP-7o-7Lv"/>
                                     <constraint firstAttribute="width" constant="150" id="zPK-mP-wQg"/>
@@ -36,6 +36,7 @@
                             <constraint firstItem="LAC-Qx-Ppb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YJo-NW-2eJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KfD-3j-9Ei"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,12 +127,6 @@
                                     <constraint firstItem="aH5-hH-wPR" firstAttribute="centerX" secondItem="FZY-Be-XV7" secondAttribute="centerX" id="sRH-Np-NzG"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXJ-t4-smt">
-                                <rect key="frame" x="229" y="502" width="88" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="safari" catalog="system" title="Button"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DRe-dt-1eh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,6 +148,7 @@
                         <outlet property="titleLabel" destination="aH5-hH-wPR" id="12Q-Kn-hNL"/>
                         <outlet property="topBar" destination="FZY-Be-XV7" id="RzU-eu-ZrZ"/>
                         <outlet property="uRLAdressLabel" destination="QNv-6x-uoG" id="MlG-7Z-Rew"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Left" id="q4Q-VE-s3H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6s4-NJ-v6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -165,7 +161,6 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="focus" width="150" height="150"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="safari" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

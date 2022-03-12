@@ -9,7 +9,6 @@ import UIKit
 
 class QRCodeViewController: UIViewController {
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -17,7 +16,6 @@ class QRCodeViewController: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .systemPurple
-
     }
     
     @IBAction func returnToHomeScreen(segue: UIStoryboardSegue) {
