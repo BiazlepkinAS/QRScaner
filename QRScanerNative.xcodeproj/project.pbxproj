@@ -104,6 +104,7 @@
 				0906001C27DC8E41006C6BA5 /* QRCodeViewController.swift */,
 				0906004827DC8EB7006C6BA5 /* QRScannerViewController.swift */,
 				0906001E27DC8E41006C6BA5 /* Main.storyboard */,
+				0906002627DC8E43006C6BA5 /* Info.plist */,
 				0906004A27DC8EC9006C6BA5 /* Resources */,
 			);
 			path = QRScanerNative;
@@ -133,7 +134,6 @@
 				0906001A27DC8E41006C6BA5 /* SceneDelegate.swift */,
 				0906002127DC8E43006C6BA5 /* Assets.xcassets */,
 				0906002327DC8E43006C6BA5 /* LaunchScreen.storyboard */,
-				0906002627DC8E43006C6BA5 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
