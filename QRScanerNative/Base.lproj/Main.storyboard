@@ -57,7 +57,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="SCANNING..." id="0ez-zd-yOc">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="NcC-K5-xVL">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NcC-K5-xVL">
                                             <color key="tintColor" systemColor="labelColor"/>
                                             <connections>
                                                 <segue destination="e0P-WC-Xux" kind="unwind" unwindAction="returnToHomeScreenWithSegue:" id="fyi-6S-Wgp"/>
@@ -75,20 +75,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaV-FF-Bgf">
+                                <rect key="frame" x="364" y="581" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="QQM-Vr-iUv"/>
+                                    <constraint firstAttribute="height" constant="30" id="mRO-7N-oaI"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="qrcode.viewfinder" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DRe-dt-1eh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WhW-v0-3eC" firstAttribute="leading" secondItem="DRe-dt-1eh" secondAttribute="leading" id="9Wz-yn-S21"/>
                             <constraint firstItem="WhW-v0-3eC" firstAttribute="top" secondItem="DRe-dt-1eh" secondAttribute="top" id="NlY-kA-a8L"/>
+                            <constraint firstItem="DRe-dt-1eh" firstAttribute="trailing" secondItem="VaV-FF-Bgf" secondAttribute="trailing" constant="20" id="Ogs-1t-Iey"/>
                             <constraint firstItem="DRe-dt-1eh" firstAttribute="trailing" secondItem="QNv-6x-uoG" secondAttribute="trailing" constant="10" id="TZn-Xn-OnQ"/>
                             <constraint firstItem="QNv-6x-uoG" firstAttribute="leading" secondItem="DRe-dt-1eh" secondAttribute="leading" constant="10" id="jlu-CO-xvq"/>
                             <constraint firstItem="QNv-6x-uoG" firstAttribute="bottom" secondItem="DRe-dt-1eh" secondAttribute="bottom" id="mUc-4f-TCJ"/>
                             <constraint firstAttribute="trailing" secondItem="WhW-v0-3eC" secondAttribute="trailing" id="wJ9-uD-aMC"/>
+                            <constraint firstItem="QNv-6x-uoG" firstAttribute="top" secondItem="VaV-FF-Bgf" secondAttribute="bottom" constant="221" id="yLy-7e-zfw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aei-u8-IMM"/>
                     <connections>
+                        <outlet property="moreButton" destination="VaV-FF-Bgf" id="4WZ-ph-eBy"/>
+                        <outlet property="topBar" destination="WhW-v0-3eC" id="sBc-I6-5jE"/>
                         <outlet property="uRLAdressLabel" destination="QNv-6x-uoG" id="MlG-7Z-Rew"/>
                     </connections>
                 </viewController>
@@ -99,13 +114,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="focus" width="150" height="150"/>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
