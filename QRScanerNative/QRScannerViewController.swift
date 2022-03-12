@@ -34,11 +34,14 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var uRLAdressLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
     
+    @IBAction func menuShow(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Scanning()
+        showMenu()
         
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
@@ -65,6 +68,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         captureSession.startRunning()
         view.bringSubviewToFront(uRLAdressLabel)
         view.bringSubviewToFront(topBar)
+        view.bringSubviewToFront(moreButton)
         
         qrCodeFrame = UIView()
         if let qrCodeFrame = qrCodeFrame {
@@ -127,6 +131,32 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         uRLAdressLabel.textColor = .black
         uRLAdressLabel.backgroundColor = .clear
         topBar.backgroundColor = .clear
+        
+    }
+    
+    private func showMenu() {
+        let shared = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { (action) in
+
+                 print("shared action was tapped")
+            }
+
+            let copyLink = UIAction(title: "copy Links", image: UIImage(systemName: "doc.on.doc.fill")) { (action) in
+
+                print("Add User action was tapped")
+            }
+
+            let addToReadList = UIAction(title: "add to readList", image: UIImage(systemName: "eyeglasses")) { (action) in
+                 print("Remove User action was tapped")
+            }
+        let openToApp = UIAction(title: "open in App", image: UIImage(systemName:"safari")) { (action) in
+            print("Add to App action tapped")
+        }
+        
+
+            let menu = UIMenu(title: "Menu", options: .displayInline, children: [shared , copyLink, addToReadList, openToApp])
+        
+        moreButton.menu = menu
+        moreButton.showsMenuAsPrimaryAction = true
         
     }
     
